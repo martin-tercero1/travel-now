@@ -5,14 +5,11 @@ import { HeartIcon } from "@heroicons/react/24/solid";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
 import { UserIcon } from "@heroicons/react/24/solid";
 import { MoonIcon } from "@heroicons/react/24/solid";
+import { QuestionMarkCircleIcon } from "@heroicons/react/24/solid";
 import { SiX } from '@icons-pack/react-simple-icons';
 import { SiInstagram } from "@icons-pack/react-simple-icons";
-import { useContext } from "react";
-import { ThemeContext } from '../layout';
-
 
 function Icon({section, icon }) {
-  const { theme, toggleTheme } = useContext(ThemeContext)
 
   const getIconComponent = (icon) => {
     switch (icon) {
@@ -28,6 +25,10 @@ function Icon({section, icon }) {
         return (
           <UserIcon className="lg:w-8 lg:h-8 w-7 h-7 text-primary dark:text-white" />
         );
+      case "question":
+        return (
+          <QuestionMarkCircleIcon className="lg:w-8 lg:h-8 w-7 h-7 text-primary dark:text-white" />
+        );
       case "x":
         return (
           <SiX className="lg:w-8 lg:h-8 w-7 h-7 text-primary dark:text-white" />
@@ -39,7 +40,6 @@ function Icon({section, icon }) {
       case "dark-mode":
         return (
           <MoonIcon
-            onClick={toggleTheme}
             className="lg:w-8 lg:h-8 w-7 h-7 text-primary dark:text-white"
           />
         );
@@ -51,9 +51,9 @@ function Icon({section, icon }) {
   const iconComponent = getIconComponent(icon);
 
   return (
-  <a href={`#${section}`}>
+  <span href={`#${section}`}>
     {iconComponent}
-    </a>);
+    </span>);
 }
 
 export default Icon;
