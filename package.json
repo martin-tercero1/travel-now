@@ -11,13 +11,16 @@
   "dependencies": {
     "@heroicons/react": "^2.1.1",
     "@icons-pack/react-simple-icons": "^9.4.0",
+    "@xstate/react": "^4.1.1",
+    "axios": "^1.7.2",
     "framer-motion": "^11.1.8",
     "hamburger-react": "^2.5.0",
     "next": "14.1.0",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-use": "^17.5.0"
+    "react-use": "^17.5.0",
+    "xstate": "^5.13.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

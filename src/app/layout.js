@@ -1,8 +1,6 @@
 "use client";
-
 import { Montserrat } from "next/font/google";
 import "./globals.css";
-
 import { createContext, useState } from "react";
 
 export const ThemeContext = createContext({ theme: "dark" });
@@ -13,7 +11,6 @@ export default function RootLayout({ children }) {
   const [theme, setTheme] = useState("dark");
 
   const toggleTheme = () => {
-    console.log('clicked');
     setTheme(theme === "dark" ? "light" : "dark")
   };
 

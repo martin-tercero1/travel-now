@@ -1,5 +1,8 @@
 'use client'
 
+import { useContext } from "react";
+import { ThemeContext } from "../layout";
+
 import { HomeIcon } from "@heroicons/react/24/solid";
 import { HeartIcon } from "@heroicons/react/24/solid";
 import { MagnifyingGlassIcon } from "@heroicons/react/24/solid";
@@ -10,6 +13,7 @@ import { SiX } from '@icons-pack/react-simple-icons';
 import { SiInstagram } from "@icons-pack/react-simple-icons";
 
 function Icon({section, icon }) {
+  const { theme, toggleTheme } = useContext(ThemeContext);
 
   const getIconComponent = (icon) => {
     switch (icon) {
@@ -40,6 +44,9 @@ function Icon({section, icon }) {
       case "dark-mode":
         return (
           <MoonIcon
+            onClick={() => {
+              toggleTheme();
+            }}
             className="lg:w-8 lg:h-8 w-7 h-7 text-primary dark:text-white"
           />
         );

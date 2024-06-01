@@ -1,24 +1,29 @@
+"use client";
 import Home from "./Home/Home";
 import Recommended from "./Recommended/Recommended";
-import Featured from './Featured/Featured';
-import FAQs from './FAQ/FAQs';
+import Featured from "./Featured/Featured";
+import FAQs from "./FAQ/FAQs";
 import Footer from "./Footer/Footer";
 import TabBar from "./Mobile/TabBar";
-import Header from './Nav/NavDesktop';
+import Header from "./Nav/NavDesktop";
+import { useMachine } from "@xstate/react";
+import { bookingMachine } from "../Machines/bookingMachine";
 
 export default function App() {
-    return (
-      <>
-        <Header/>
+  const [state, send] = useMachine(bookingMachine);
 
-        <section className="w-full h-screen mt-14">
-          <Home />
-          <Recommended />
-          <Featured />
-          <FAQs />
+  return (
+    <>
+      <Header />
+      <section className="w-full h-screen mt-14">
+        <Home state={state} send={send} />
+        <TabBar></TabBar>
+        <Recommended />
+        <Featured />
+        <FAQs />
         <Footer />
-        </section>
-        {/* <TabBar/> */}
-      </>
-    );
+      </section>
+      {/* <TabBar/> */}
+    </>
+  );
 }

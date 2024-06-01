@@ -1,11 +1,11 @@
 'use client'
 import Icon from "../utils/Icon";
-import NavMobile from './NavMobile'
+import NavMobile from './NavMobile';
 
 function Header() {
   return (
     <>
-      <nav className="w-full h-14 hidden bg-white lg:flex p-4 justify-between fixed z-10 dark:bg-gray-800">
+      <nav className="w-full h-14 hidden bg-white lg:flex p-4 justify-between fixed left-0 top-0 z-10 dark:bg-gray-800">
         <div className="h-auto w-auto">
           <p className="text-xl text-primary font-black dark:text-white">
             Travel Now
